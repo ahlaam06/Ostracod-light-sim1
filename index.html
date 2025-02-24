@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ostracod Bioluminescence Simulation</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        canvas { max-width: 600px; margin: 20px auto; }
+        .tank {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 10px;
+            position: relative;
+            background-color: black;
+        }
+        .ostracod {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ostracod Bioluminescence Simulation</h1>
+    <p>Tracking bioluminescent courtship displays under different LED intensities</p>
+    
+    <div id="simulation">
+        <div class="tank" id="controlTank">Control (No LED)</div>
+        <div class="tank" id="lowLedTank">Low Intensity LED</div>
+        <div class="tank" id="highLedTank">High Intensity LED</div>
+    </div>
+    
+    <script>
+        function createOstracods(tankId, count, color) {
+            const tank = document.getElementById(tankId);
+            tank.innerHTML = tankId.replace('Tank', ' Tank');
+            for (let i = 0; i < count; i++) {
+                let ostracod = document.createElement('div');
+                ostracod.classList.add('ostracod');
+                ostracod.
